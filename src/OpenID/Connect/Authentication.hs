@@ -175,6 +175,16 @@ data ClientAuthentication
     -- already have access to the public key corresponding to the
     -- private key.
 
+  | TlsClientAuth
+    -- ^  Indicates that client authentication to the authorization
+    -- server will occur with mutual TLS utilizing the PKI method of
+    -- associating a certificate to a client.
+
+  | SelfSignedTlsClientAuth
+    -- ^ Indicates that client authentication to the authorization
+    -- server will occur using mutual TLS with the client utilizing
+    -- a self-signed certificate
+
   | None
     -- ^ The Client does not authenticate itself at the Token
     -- Endpoint, either because it uses only the Implicit Flow (and so
